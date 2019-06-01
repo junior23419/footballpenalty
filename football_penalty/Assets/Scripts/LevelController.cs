@@ -68,7 +68,7 @@ public class LevelController : MonoBehaviour
             if(scoreDiff > shotsRemaining[1])
             {
                 //end P1 wins
-                GameIsDone(1);
+                GameIsDone("Liverpool");
             }
         }
         else if(scoreDiff < 0)
@@ -77,7 +77,7 @@ public class LevelController : MonoBehaviour
             if (scoreDiff > shotsRemaining[0])
             {
                 //end P2 wins
-                GameIsDone(2);
+                GameIsDone("Tottenham Hotspur");
             }
         }
         else if(shotsRemaining[1] <=0)
@@ -87,9 +87,9 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    private void GameIsDone(int winner)
+    private void GameIsDone(string winner)
     {
-        winnerText.text = "P"+(winner.ToString())+  " wins";
+        winnerText.text = winner +  " wins";
         winnerText.gameObject.SetActive(true);
         ballController.SetFootballControlStatus(false);
     }
